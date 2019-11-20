@@ -1,1 +1,110 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editor With ACE</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>	
+    <script src="https://pagecdn.io/lib/ace/1.4.6/ace.js" 
+    integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous">
+    </script>
+    <script src="https://pagecdn.io/lib/ace/1.4.6/ext-language_tools.js" 
+    integrity="sha256-5GsAp93HE/XYlhrUPMw4VBAoawG9n3c7+DbQE4tRwW0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="acedemo.css">
+    <script src="acedemo.js"></script>
+</head>
+
+<body>
+
+
+
+    <div id="TotalScreen" ">
+       <textarea id="txtarea" name="txtarea" onclick="txtareaClick()"></textarea>
+        <div id="Editor-Screen" "class="col-md-12" style="display:none">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="btn-group-justified btn-group-lg">
+                            <button type="button" onclick="varbtnClick()" class="btn btn-outline-secondary btn-block">Variable</button>
+                        <button type="button" onclick="ifbtnClick()" class="btn btn-outline-secondary btn-block">if conditon</button>
+                        <button type="button" onclick="ifelsebtnClick()"" class="btn btn-outline-secondary btn-block">if else</button>
+                        <button type="button" onclick="forbtnClick()" class="btn btn-outline-secondary btn-block">for loop</button>
+                        <button style="color: green;" type="button" onclick="saveClick()" class="btn btn-outline-secondary btn-block">Save</button>
+                        <button style="color: red;" type="button" onclick="discardClick()" class="btn btn-outline-secondary btn-block">Discard</button>
+                    </div>
+                </div>
+                <div  class="col-sm-8">
+                    <div id="editArea" style="position: absolute; width: 100%; height:100%"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+
+ 
+
+    <!-- <script>
+    // Hook up ACE editor to all textareas with data-editor attribute
+    $(function () {
+        $('textarea[data-editor]').each(function () {
+            var textarea = $(this);
+            console.log(textarea);
+            var mode = textarea.data('editor');
+            console.log(mode);
+            var editDiv = $('<div>', {
+                position: 'absolute',
+                width: textarea.width(),
+                height: textarea.height(),
+                'class': textarea.attr('class')
+            }).insertBefore(textarea);
+
+            textarea.css('visibility', 'hidden');
+            var editor = ace.edit(editDiv[0]);
+            editor.renderer.setShowGutter(false);
+            editor.getSession().setValue(textarea.val());
+            editor.getSession().setMode("ace/mode/" + mode);
+            // editor.setTheme("ace/theme/idle_fingers");
+            
+            // copy back to textarea on form submit...
+            textarea.closest('form').submit(function () {
+                textarea.val(editor.getSession().getValue());
+            })
+        });
+    });
+</script> -->
+    <!-- </body>
+    <textarea name="" id="editor" cols="30" rows="10">Text area</textarea>
+    <div id="editor">function foo(items) {
+            var x = "All this is syntax highlighted";
+            return x;
+        }</div>
+
+    <script src="ace-builds-master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ace-builds-master/src-noconflict/ext-language_tools.js"></script>
+
+    <script>
+        // var editor = ace.edit("editor");
+        // editor.setTheme("ace/theme/monokai");
+        // editor.session.setMode("ace/mode/javascript");
+        //     // trigger extension
+        ace.require("ace/ext/language_tools");
+        var editor = ace.edit("editor");
+        editor.session.setMode("ace/mode/javascript");
+        //editor.setTheme("ace/theme/tomorrow");
+        // enable autocompletion and snippets
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
+        });
+    </script>
+</body> -->
+
+</html>
