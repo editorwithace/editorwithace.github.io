@@ -22,7 +22,11 @@ function txtareaClick() {
         editScr.css('display', 'block');
         editor = ace.edit(editDiv[0]);
         editor.renderer.setShowGutter(true);
-        editor.getSession().setValue(textarea.val());
+        var textAreaVal =  textarea.val();
+        if (!textAreaVal.endsWith("\n")) {
+            textAreaVal += '\n'
+        }
+        editor.getSession().setValue(textAreaVal);
         editor.getSession().setMode("ace/mode/javascript");
         editor.setTheme("ace/theme/tomorrow");
         editor.setOptions({
@@ -54,6 +58,10 @@ function appendStringInEditor(appendOp){
         case 'varAssign':
             textString= "var i=1;\n"
             break;
+        case 'wrongCode':
+            textString= ",,,;%fjdkf,,\n"
+            break;
+        
         default:
             textString= "";
     }
@@ -71,6 +79,16 @@ function forbtnClick() {
 function varbtnClick() {
     appendStringInEditor('varAssign');
 }
+function wrongCodebtnClick() {
+    appendStringInEditor('wrongCode');
+}
+function helpbtnClick() {
+    window.alert('Type in Code in the Editor\nYou can use the buttons in the left panel\n\
+    Save button saves the code into textarea if no syntax errors are present\n\
+    Use Discard button to exit without yout changes\n');
+    
+}
+
 
 function saveClick() {
     var textarea = $('#txtarea');
